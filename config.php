@@ -1,7 +1,7 @@
 <?
 
 $binary = '/usr/bin/wakeonlan';
-$list_csv = 'machines.csv'
+$list_csv = '../machines.csv'
 
 
 ?>

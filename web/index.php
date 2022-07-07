@@ -2,9 +2,26 @@
 
 include('../config.php');
 
-if (!empty($_GET['wol'])
+if (!empty($_GET['wol']))
 	{
-	echo 'zapinam';
+	$row = 1;
+	$data = '';
+	if (($handle = fopen($list_csv, "r")) !== FALSE) {
+	    while (($data = fgetcsv($handle, 1000, ";")) !== FALSE) {
+	        $num = count($data);
+	        $row++;
+		if ( $_GET['wol'] == $data[1] )
+			{ $name = $data[1]; $mac = $data[0]; }
+        	}
+	    fclose($handle);
+	    }
+	if (!empty($name))
+	    {
+            exec($binary." ".$mac, $output, $retval);
+            print_r($output);
+            echo "<br><br>";
+	    }
+        else { echo "WoL device was not foun in list!"; }
 	}
 
 echo "
@@ -16,7 +33,7 @@ echo "
 ";
 
 $row = 1;
-if (($handle = fopen('../'.$list_csv, "r")) !== FALSE) {
+if (($handle = fopen($list_csv, "r")) !== FALSE) {
     while (($data = fgetcsv($handle, 1000, ";")) !== FALSE) {
         $num = count($data);
         $row++;
