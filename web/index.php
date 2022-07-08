@@ -18,10 +18,11 @@ if (!empty($_GET['wol']))
 	if (!empty($name))
 	    {
             exec($binary." ".$mac, $output, $retval);
-            print_r($output);
+            echo $output[0];
             echo "<br><br>";
 	    }
-        else { echo "WoL device was not foun in list!"; }
+        else { echo "WoL device was not foun in list!<br>\n"; }
+	echo "<br>\n";
 	}
 
 echo "
