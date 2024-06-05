@@ -1,50 +1,50 @@
-<?
-
-include('../config.php');
-
-if (!empty($_GET['wol']))
-	{
-	$row = 1;
-	$data = '';
-	if (($handle = fopen($list_csv, "r")) !== FALSE) {
-	    while (($data = fgetcsv($handle, 1000, ";")) !== FALSE) {
-	        $num = count($data);
-	        $row++;
-		if ( $_GET['wol'] == $data[1] )
-			{ $name = $data[1]; $mac = $data[0]; }
-        	}
-	    fclose($handle);
-	    }
-	if (!empty($name))
-	    {
-            exec($binary." ".$mac, $output, $retval);
-            echo $output[0];
-            echo "<br><br>";
-	    }
-        else { echo "WoL device was not foun in list!<br>\n"; }
-	echo "<br>\n";
-	}
-
-echo "
 <html>
-<head>
-	<title>WakeOnLan</title>
-<head>
-<body>
-";
+  <head>
+    <title>phpWoL</title>
+    <link rel="stylesheet" type="text/css" href="features/main_page.css">
+  </head>
+  <body>
+  <div id="header">
+    <a href="#">SETTINGS</a>
+    <a href="./logout.php">LOGOUT</a>
+  </div>
 
-$row = 1;
-if (($handle = fopen($list_csv, "r")) !== FALSE) {
-    while (($data = fgetcsv($handle, 1000, ";")) !== FALSE) {
-        $num = count($data);
-        $row++;
-	echo $data[1]." (".$data[0].") - <a href='?wol=".$data[1]."'>WoL</a><br>\n";
-        #for ($c=0; $c < $num; $c++) {
-        #    echo $data[$c] . "<br />\n";
-        #    }
-        }
-    fclose($handle);
+<div id="content">
+<?php
+session_start();
+$debug = true;
+
+if ($debug)
+  {
+  error_reporting(E_ALL);
+  ini_set('display_errors', 'On');
+  }
+
+# load config file
+$config_file_raw = file_get_contents('../config.json'); 
+$config = json_decode($config_file_raw); 
+if (empty($config)) die("failed to parse JSON config");
+
+# check if logged in
+if (empty($_SESSION['id'])) header('Location: login/');
+
+echo '<table>
+  <tr>
+    <th>TITLE</th>
+    <th>MAC</th>
+    <th>Wake On Lan</th>
+  </tr>
+';
+foreach ($config->data as $host)
+  {
+  if (isset($host->title) && isset($host->mac) )
+    {
+    echo '<tr><td>'.$host->title."</td><td>".$host->mac.'<td><a target="_new" href="api.php?title='.$host->title.'">EXECUTE</a></td></tr>';
     }
-
-echo "</body></html>"
+  }
+echo '</table>';
+ 
 ?>
+   </div>
+  </body>
+</html>

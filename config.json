@@ -1,0 +1,25 @@
+{
+    "configuration": {
+        "wol_binary": "/usr/bin/wakeonlan",
+        "language": "sk"
+    },
+    "data": [
+        {
+            "title": "intel_x79_horna",
+            "mac": "38:60:77:60:92:f9",
+            "order": 1 
+        },
+        {
+            "title": "dell_z_avastu",
+            "mac": "b8:ca:3a:ba:8a:1d",
+            "order": 2
+        }
+    ],
+    "users": [
+        {
+            "name": "admin",
+            "pass": "pass",
+            "id": "1"
+        }
+    ]
+}

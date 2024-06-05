@@ -1,0 +1,41 @@
+html body div#header
+  {
+  width: 100%;
+  height: 1.5rem;
+  background-color: rgb(232, 240, 254);
+  text-align: right;
+  padding-top: 0.5rem;
+  }
+
+html body div#header a
+  { 
+  text-decoration: none; 
+  //color: rgb(64, 56, 102);
+  color: #827ffe;
+  font-family: Ubuntu-Bold;
+  font-weight: 400;
+  line-height: 1rem;
+  margin: 0 0.5rem 0 0.5rem;
+  }
+
+a
+  { text-decoration: none; }
+
+a:hover
+  { text-decoration: none; }
+
+a:visited
+  { text-decoration: none; }
+
+html body div#content 
+  {
+  margin-left: auto; 
+  margin-right: auto; 
+  margin-top: 3rem;
+  width: 30rem;
+  }
+
+html body div#content table tr td
+  { text-align: center; }
+
+
