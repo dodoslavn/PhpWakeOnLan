@@ -38,28 +38,17 @@ if ( isset($_POST) )
 <title>Login - phpWoL</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <link rel="icon" type="image/png" href="../features/favicon.ico" />
-
 <link rel="stylesheet" type="text/css" href="../features/bootstrap.min.css">
-
 <link rel="stylesheet" type="text/css" href="../features/font-awesome.min.css">
-
 <link rel="stylesheet" type="text/css" href="../features/icon-font.min.css">
-
 <link rel="stylesheet" type="text/css" href="../features/animate.css">
-
 <link rel="stylesheet" type="text/css" href="../features/hamburgers.min.css">
-
 <link rel="stylesheet" type="text/css" href="../features/animsition.min.css">
-
 <link rel="stylesheet" type="text/css" href="../features/select2.min.css">
-
 <link rel="stylesheet" type="text/css" href="../features/daterangepicker.css">
-
 <link rel="stylesheet" type="text/css" href="../features/util.css">
 <link rel="stylesheet" type="text/css" href="../features/main.css">
-
 <meta name="robots" content="noindex, follow">
 </head>
 <body>
@@ -101,23 +90,14 @@ Login
 </div>
 </div>
 <div id="dropDownSelect1"></div>
-
 <script src="../features/jquery-3.2.1.min.js"></script>
-
 <script src="../features/animsition.min.js"></script>
-
 <script src="../features/popper.js"></script>
 <script src="../features/bootstrap.min.js"></script>
-
 <script src="../features/select2.min.js"></script>
-
 <script src="../features/moment.min.js"></script>
 <script src="../features/daterangepicker.js"></script>
-
 <script src="../features/countdowntime.js"></script>
-
 <script src="../features/main.js"></script>
-
 </body>
 </html>
-
