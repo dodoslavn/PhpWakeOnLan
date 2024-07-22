@@ -50,6 +50,7 @@ if ( isset($_POST) )
 <link rel="stylesheet" type="text/css" href="../features/util.css">
 <link rel="stylesheet" type="text/css" href="../features/main.css">
 <meta name="robots" content="noindex, follow">
+<title>PhpWakeupOnLan</title>
 </head>
 <body>
 <div class="limiter">
