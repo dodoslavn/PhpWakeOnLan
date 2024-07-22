@@ -53,7 +53,7 @@ if ( isset($_POST) )
         else
             { $password = $pass; }
         }
-    echo $config->users->$username->pass."-----".$password 
+    echo $config->users->$username->pass."-----".$password ;
     if ( $config->users->$username->pass == $password )
         {
         #login successful
