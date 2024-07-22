@@ -3,6 +3,14 @@ session_start();
 
 if (isset($_SESSION['id'])) header('Location: ..');
 
+$debug = true;
+
+if ($debug)
+  {
+  error_reporting(E_ALL);
+  ini_set('display_errors', 'On');
+  }
+
 
 if ( isset($_POST) )
   {
