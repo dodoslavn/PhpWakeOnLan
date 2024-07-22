@@ -11,13 +11,14 @@ if ($debug)
   ini_set('display_errors', 'On');
   }
 
-  $form_user = '';
+  if ( !isset($_SESSION["form_user"]) )
+    { $_SESSION["form_user"] = ""; }
 
 if ( isset($_POST) )
   {
   if ( !empty($_POST['username']) && !empty($_POST['pass']) )
     {
-    $form_user = ' value="'.$_POST['username'].'" ';
+    $_SESSION["form_user"] = ' value="'.$_POST['username'].'" ';
 
     # load config file
     $config_file_raw = file_get_contents('../../config.json');
