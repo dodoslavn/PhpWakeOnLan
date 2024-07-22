@@ -45,7 +45,7 @@ if ( isset($_POST) )
         header('Location: #');
         }
     if ( !isset($config->users->$username->password_hashed) )
-        { $password =  $pass; }
+        { $password = $pass; }
     if ( isset($config->users->$username->password_hashed) )
         {
         if ( $config->users->$username->password_hashed == true )
@@ -53,6 +53,7 @@ if ( isset($_POST) )
         else
             { $password = $pass; }
         }
+    echo $config->users->$username->pass."-----".$password 
     if ( $config->users->$username->pass == $password )
         {
         #login successful
