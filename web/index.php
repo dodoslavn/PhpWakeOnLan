@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>phpWoL</title>
+    <title>PhpWakeupOnLan</title>
     <link rel="stylesheet" type="text/css" href="features/main_page.css">
   </head>
   <body>

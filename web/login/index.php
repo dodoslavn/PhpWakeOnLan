@@ -35,7 +35,7 @@ if ( isset($_POST) )
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Login - phpWoL</title>
+<title>Login - PhpWakeupOnLan</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/png" href="../features/favicon.ico" />
@@ -50,7 +50,6 @@ if ( isset($_POST) )
 <link rel="stylesheet" type="text/css" href="../features/util.css">
 <link rel="stylesheet" type="text/css" href="../features/main.css">
 <meta name="robots" content="noindex, follow">
-<title>PhpWakeupOnLan</title>
 </head>
 <body>
 <div class="limiter">
