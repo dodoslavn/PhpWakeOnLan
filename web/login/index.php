@@ -25,7 +25,11 @@ if ( isset($_POST) )
 
     $password_hashed = password_hash($_POST['pass'], PASSWORD_DEFAULT);
 
-
+    if ( !isset($config->users->$_POST['username'] )
+        {
+        #user doesnt exist in json
+        header('Location: #');
+        }
 
 
 
