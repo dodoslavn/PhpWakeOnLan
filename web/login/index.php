@@ -17,8 +17,7 @@ if ($debug)
 if ( isset($_POST) )
   {
   $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_SPECIAL_CHARS);
-  $pass = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_SPECIAL_CHARS);
-  echo $pass;
+  $pass = filter_input(INPUT_POST, 'pass', FILTER_SANITIZE_STRING);
   if ( !empty($username) && !empty($_POST['pass']) )
     {
     $_SESSION["form_user"] = ' value="'.$username.'" ';
@@ -28,7 +27,7 @@ if ( isset($_POST) )
     $config = json_decode($config_file_raw);
     if (empty($config)) die("failed to parse JSON config");
 
-    $password_hashed = hash('sha256', $pass);
+    $password_hashed = password_hash($pass, PASSWORD_DEFAULT);
 
     if ( !isset($config->users->$username) )
         {
