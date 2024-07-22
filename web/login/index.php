@@ -102,7 +102,7 @@ if ( isset($_POST) )
                   PHP Wakeup On Lan
                   </span>
                   <div class="wrap-input100 validate-input m-b-16" data-validate="Username is required">
-                     <input class="input100" type="text" name="username" placeholder="Username" <? echo $form_user; ?>  >
+                     <input class="input100" type="text" name="username" placeholder="Username" <? echo $_SESSION["form_user"]; ?>  >
                      <span class="focus-input100"></span>
                   </div>
                   <div class="wrap-input100 validate-input m-b-16" data-validate="Password is required">
