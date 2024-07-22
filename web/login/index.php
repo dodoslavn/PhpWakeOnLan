@@ -16,8 +16,8 @@ if ($debug)
 
 if ( isset($_POST) )
   {
-  $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
-  $pass = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+  $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_SPECIAL_CHARS);
+  $pass = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_SPECIAL_CHARS);
   if ( !empty($username) && !empty($_POST['pass']) )
     {
     $_SESSION["form_user"] = ' value="'.$username.'" ';
