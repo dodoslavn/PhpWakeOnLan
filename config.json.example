@@ -15,12 +15,11 @@
             "order": 2
         }
     ],
-    "users": [
-        {
-            "name": "admin",
-            "pass": "pass",
-            "password_hashed":  false,
-            "id": "1"
-        }
-    ]
+  "users": {
+    "admin": {
+      "pass": "pass",
+      "password_hashed": false,
+      "id": "1"
+    }
+  }
 }
