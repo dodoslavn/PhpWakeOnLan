@@ -41,7 +41,7 @@ if ( isset($_POST) )
         if ($user->name == $_POST['username'] && $user->pass == $pass ) 
           {
           $_SESSION["id"] = $user->id;
-          $config->users->$_POST['username']->pass = $password_hashed;
+          $config->users->{$_POST['username']}->pass = $password_hashed;
           //$config["users"][$_POST['username']]["pass"] = $password_hashed;
           //$config["users"][$_POST['username']]["password_hashed"] = true;
           $save_json_file = json_encode($config);
