@@ -17,7 +17,7 @@ if ($debug)
 if ( isset($_POST) )
   {
   $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_SPECIAL_CHARS);
-  $pass = filter_input(INPUT_POST, 'pass', FILTER_SANITIZE_STRING);
+  $pass = filter_input(INPUT_POST, 'pass', FILTER_SANITIZE_SPECIAL_CHARS);
   if ( !empty($username) && !empty($_POST['pass']) )
     {
     $_SESSION["form_user"] = ' value="'.$username.'" ';
@@ -59,7 +59,7 @@ if ( isset($_POST) )
         if ( $password_hashed != $password )
             {
             $config->users->$username->pass = $password_hashed;
-            $config->users->$username->$password_hashed = true;
+            $config->users->$username->password_hashed = true;
 
             $save_json_file = json_encode($config);
             file_put_contents('../../config.json', $save_json_file);
