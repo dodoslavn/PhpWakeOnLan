@@ -11,6 +11,7 @@ if ($debug)
   ini_set('display_errors', 'On');
   }
 
+  $form_user = '';
 
 if ( isset($_POST) )
   {
