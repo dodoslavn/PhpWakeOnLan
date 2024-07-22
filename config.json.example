@@ -19,6 +19,7 @@
         {
             "name": "admin",
             "pass": "pass",
+            "password_hashed":  false,
             "id": "1"
         }
     ]
