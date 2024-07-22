@@ -30,7 +30,7 @@ if ( isset($_POST) )
     if ( !isset($config->users->$_POST['username']) )
         {
         #user doesnt exist in json
-        header('Location: #');
+        header('Location: /login/aaa');
         }
 
 
