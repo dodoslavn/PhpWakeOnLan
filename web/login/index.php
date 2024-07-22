@@ -16,53 +16,55 @@ if ($debug)
 
 if ( isset($_POST) )
   {
-  if ( !empty($_POST['username']) && !empty($_POST['pass']) )
+  $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
+  $pass = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+  if ( !empty($username) && !empty($_POST['pass']) )
     {
-    $_SESSION["form_user"] = ' value="'.$_POST['username'].'" ';
+    $_SESSION["form_user"] = ' value="'.$username.'" ';
 
     # load config file
     $config_file_raw = file_get_contents('../../config.json');
     $config = json_decode($config_file_raw);
     if (empty($config)) die("failed to parse JSON config");
 
-    $password_hashed = password_hash($_POST['pass'], PASSWORD_DEFAULT);
+    $password_hashed = password_hash($pass, PASSWORD_DEFAULT);
 
-    if ( !isset($config->users->$_POST['username']) )
+    if ( !isset($config->users->$username) )
         {
         #user doesnt exist in json
         header('Location: #');
         }
-    if ( !isset($config->users->$_POST['username']->id) )
+    if ( !isset($config->users->$username->id) )
         {
         #user doesnt have ID
         header('Location: #');
         }
-    if ( !isset($config->users->$_POST['username']->pass) )
+    if ( !isset($config->users->$username->pass) )
         {
         #user doesnt have password
         header('Location: #');
         }
-    if ( !isset($config->users->$_POST['username']->$password_hashed) )
-        { $pass = $_POST['pass']; }
-    if ( isset($config->users->$_POST['username']->$password_hashed) )
+    if ( !isset($config->users->$username->password_hashed) )
+        { $password =  $pass; }
+    if ( isset($config->users->$username->password_hashed) )
         {
-        if ( $config->users->$_POST['username']->$password_hashed == true )
-            { $pass = $password_hashed; }
+        if ( $config->users->$username->password_hashed == true )
+            { $password = $password_hashed; }
         else
-            { $pass = $_POST['pass']; }
+            { $password = $pass; }
         }
-    if ( $config->users->$_POST['username']->pass == $pass )
+    if ( $config->users->$username->pass == $password )
         {
         #login successful
-        if ( $password_hashed != $pass )
+        if ( $password_hashed != $password )
             {
-            $config->users->$_POST['username']->pass = $password_hashed;
-            $config->users->$_POST['username']->$password_hashed = true;
+            $config->users->$username->pass = $password_hashed;
+            $config->users->$username->$password_hashed = true;
 
             $save_json_file = json_encode($config);
             file_put_contents('../../config.json', $save_json_file);
             }
-        $_SESSION["id"] = $config->users->$_POST['username']->id;
+        $_SESSION["id"] = $config->users->$username->id;
         header('Location: ..');
         }
     }
