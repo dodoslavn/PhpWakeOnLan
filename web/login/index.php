@@ -49,7 +49,7 @@ if ( isset($_POST) )
         if ( $config->users->$_POST['username']->$password_hashed == true )
             { $pass = $password_hashed; }
         else
-            { $pass = $_POST['pass']; )
+            { $pass = $_POST['pass']; }
         }
     if ( $config->users->$_POST['username']->pass == $pass )
         {
