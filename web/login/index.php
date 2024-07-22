@@ -16,12 +16,22 @@ if ( isset($_POST) )
   {
   if ( !empty($_POST['username']) && !empty($_POST['pass']) )
     {
+    $form_user = ' value="'.$_POST['username'].'" ';
+
     # load config file
     $config_file_raw = file_get_contents('../../config.json');
     $config = json_decode($config_file_raw);
     if (empty($config)) die("failed to parse JSON config");
 
     $password_hashed = password_hash($_POST['pass'], PASSWORD_DEFAULT);
+
+
+
+
+
+
+
+
 
     foreach ($config->users as $user) 
       {
@@ -86,7 +96,7 @@ if ( isset($_POST) )
                   PHP Wakeup On Lan
                   </span>
                   <div class="wrap-input100 validate-input m-b-16" data-validate="Username is required">
-                     <input class="input100" type="text" name="username" placeholder="Username">
+                     <input class="input100" type="text" name="username" placeholder="Username" <? echo $form_user; ?>  >
                      <span class="focus-input100"></span>
                   </div>
                   <div class="wrap-input100 validate-input m-b-16" data-validate="Password is required">
