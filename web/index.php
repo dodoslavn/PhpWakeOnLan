@@ -43,7 +43,7 @@ echo '<table>
 ';
 
 //$data = $config['data'];
-foreach ( $config_ordered->data as $host => $info )
+foreach ( $config_ordered as $host => $info )
   { echo '<tr><td>'.$info->title."</td><td>".$host.'<td><a target="_new" href="api.php?title='.$info->title.'">EXECUTE</a></td></tr>'; }
 echo '</table>';
  
