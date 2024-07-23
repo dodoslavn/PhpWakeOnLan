@@ -1,62 +1,80 @@
 <?php
 session_start();
 
+# check if user is logged in already
 if (isset($_SESSION['id'])) header('Location: ..');
 
-$debug = true;
+# wrong logins
+if (!isset($_SESSION['login_attempt'])) $_SESSION['login_attempt'] = 0;
 
+# debug output
+$debug = true;
 if ($debug)
   {
   error_reporting(E_ALL);
   ini_set('display_errors', 'On');
   }
 
-  if ( !isset($_SESSION["form_user"]) )
-    { $_SESSION["form_user"] = ""; }
+# show last used username in the form prefilled
+if ( !isset($_SESSION["form_user"]) )
+  { $_SESSION["form_user"] = ""; }
 
+# if form was submited, lets process logging
 if ( isset($_POST) )
   {
+  # clean input from the form
   $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_SPECIAL_CHARS);
   $pass = filter_input(INPUT_POST, 'pass', FILTER_SANITIZE_SPECIAL_CHARS);
+  # if username and passowrd was really set, lets process further
   if ( !empty($username) && !empty($_POST['pass']) )
     {
+    # set the prefilled username
     $_SESSION["form_user"] = ' value="'.$username.'" ';
 
-    # load config file
+    # load JSON config file
     $config_file_raw = file_get_contents('../../config.json');
     $config = json_decode($config_file_raw);
     if (empty($config)) die("failed to parse JSON config");
 
+    # hash password 
     $password_hashed = hash('sha256', $pass);
 
+    # if username from form doesnt exist in JSON
     if ( !isset($config->users->$username) )
         {
         #user doesnt exist in json
         header('Location: #');
         }
+    # if user from form doesnt have an ID in JSON which is mednatory
     if ( !isset($config->users->$username->id) )
         {
         #user doesnt have ID
         header('Location: #');
         }
+    # if user from form doesnt have a password in JSON which is mednatory
     if ( !isset($config->users->$username->pass) )
         {
         #user doesnt have password
         header('Location: #');
         }
+    # check if user has set the password is hashed
     if ( !isset($config->users->$username->password_hashed) )
         { $password = $pass; }
+    # check if user set the password is hashed or not
     if ( isset($config->users->$username->password_hashed) )
         {
+        # use hashed or original plan password to compare with the one stored in JSON
         if ( $config->users->$username->password_hashed == true )
             { $password = $password_hashed; }
         else
             { $password = $pass; }
         }
-    echo $config->users->$username->pass."-----".$password ;
+    # check if password matchs
     if ( $config->users->$username->pass == $password )
         {
         #login successful
+
+        # set the password to hashed form
         if ( $password_hashed != $password )
             {
             $config->users->$username->pass = $password_hashed;
@@ -68,6 +86,8 @@ if ( isset($_POST) )
         $_SESSION["id"] = $config->users->$username->id;
         header('Location: ..');
         }
+    else
+      { $_SESSION['login_attempt']++ ;  }
     }
   }
 #else FORM WAS NOT SUBMITED YET
