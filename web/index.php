@@ -35,14 +35,17 @@ $config_ordered = (array)$config->data;
 usort($config_ordered, function($a, $b) { return $a->order - $b->order; });
 
 # header for the table
-echo $config_ordered;
-echo '<table>
-  <tr>
-    <th>TITLE</th>
-    <th>MAC</th>
-    <th>Wake On Lan</th>
-  </tr>
-';
+if ( count($config_ordered) == 0 )
+  {
+  echo '<table>
+    <tr>
+      <th>TITLE</th>
+      <th>MAC</th>
+      <th>Wake On Lan</th>
+    </tr>';
+  }
+else
+  { echo "List of hosts is empty."; }
 
 # show the hosts
 foreach ( $config_ordered as $host => $info )
