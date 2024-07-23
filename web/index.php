@@ -35,7 +35,7 @@ $config_ordered = (array)$config->data;
 usort($config_ordered, function($a, $b) { return $a->order - $b->order; });
 
 # header for the table
-if ( count($config_ordered) == 0 )
+if ( count($config_ordered) > 0 )
   {
   echo '<table>
     <tr>
