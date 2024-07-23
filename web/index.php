@@ -31,8 +31,8 @@ if (empty($config)) die("failed to parse JSON config");
 if (empty($_SESSION['id'])) header('Location: login/');
 
 # order the json based on order value
-$config_ordered = (array)$config->data;
-usort($config_ordered, function($a, $b) { return $a->order - $b->order; });
+//$config_ordered = (array)$config->data;
+//usort($config_ordered, function($a, $b) { return $a->order - $b->order; });
 
 # header for the table
 if ( count($config_ordered) > 0 )
@@ -43,14 +43,24 @@ if ( count($config_ordered) > 0 )
       <th>MAC</th>
       <th>Wake On Lan</th>
     </tr>';
+  # show the hosts
+  $rest = "";
+  foreach ( $config->data as $host => $info )
+    {
+    if ( isset($info->order) )
+      { $ordered[$info->order] = '<tr><td>'.$info->title."</td><td>".$host.'<td><a target="_new" href="api.php?title='.$info->title.'">EXECUTE</a></td></tr>'; }
+    else 
+     { $rest = $rest." ".'<tr><td>'.$info->title."</td><td>".$host.'<td><a target="_new" href="api.php?title='.$info->title.'">EXECUTE</a></td></tr>'; }
+     }
+  foreach($ordered as $item)
+    { echo $item; }
+  echo $rest;
+  echo '</table>';
   }
 else
   { echo "List of hosts is empty."; }
 
-# show the hosts
-foreach ( $config_ordered as $host => $info )
-  { echo '<tr><td>'.$info->title."</td><td>".$host.'<td><a target="_new" href="api.php?title='.$info->title.'">EXECUTE</a></td></tr>'; }
-echo '</table>';
+
  
 ?>
    </div>
