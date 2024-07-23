@@ -8,12 +8,14 @@
     <a href="#">SETTINGS</a>
     <a href="./logout.php">LOGOUT</a>
   </div>
-
 <div id="content">
+  
 <?php
-session_start();
-$debug = true;
 
+session_start();
+
+# debug output switch
+$debug = true;
 if ($debug)
   {
   error_reporting(E_ALL);
@@ -35,13 +37,9 @@ echo '<table>
     <th>Wake On Lan</th>
   </tr>
 ';
-foreach ($config->data as $host)
-  {
-  if (isset($host->title) && isset($host->mac) )
-    {
-    echo '<tr><td>'.$host->title."</td><td>".$host->mac.'<td><a target="_new" href="api.php?title='.$host->title.'">EXECUTE</a></td></tr>';
-    }
-  }
+$data = $array['data'];
+foreach ( $data as $host => $info )
+  { echo '<tr><td>'.$info['title']."</td><td>".$host.'<td><a target="_new" href="api.php?title='.$info['title'].'">EXECUTE</a></td></tr>'; }
 echo '</table>';
  
 ?>
