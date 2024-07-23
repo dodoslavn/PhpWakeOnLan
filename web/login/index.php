@@ -77,7 +77,7 @@ if ( isset($_POST) )
 <!DOCTYPE html>
 <html lang="en">
    <head>
-      <title>Login - PhpWakeupOnLan</title>
+      <title>Login - PhpWakeOnLan</title>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="icon" type="image/png" href="../features/favicon.ico" />
@@ -99,7 +99,7 @@ if ( isset($_POST) )
             <div class="wrap-login100 p-t-50 p-b-90">
                <form class="login100-form validate-form flex-sb flex-w" action="" method="post">
                   <span class="login100-form-title p-b-51">
-                  PHP Wakeup On Lan
+                  PHP Wake On Lan
                   </span>
                   <div class="wrap-input100 validate-input m-b-16" data-validate="Username is required">
                      <input class="input100" type="text" name="username" placeholder="Username" <? echo $_SESSION["form_user"]; ?>  >
