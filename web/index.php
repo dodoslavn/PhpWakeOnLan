@@ -34,6 +34,8 @@ if (empty($_SESSION['id'])) header('Location: login/');
 $config_ordered = (array)$config->data;
 usort($config_ordered, function($a, $b) { return $a->order - $b->order; });
 
+# header for the table
+echo $config_ordered;
 echo '<table>
   <tr>
     <th>TITLE</th>
@@ -42,7 +44,7 @@ echo '<table>
   </tr>
 ';
 
-//$data = $config['data'];
+# show the hosts
 foreach ( $config_ordered as $host => $info )
   { echo '<tr><td>'.$info->title."</td><td>".$host.'<td><a target="_new" href="api.php?title='.$info->title.'">EXECUTE</a></td></tr>'; }
 echo '</table>';
