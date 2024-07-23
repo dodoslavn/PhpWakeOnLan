@@ -35,7 +35,7 @@ if (empty($_SESSION['id'])) header('Location: login/');
 //usort($config_ordered, function($a, $b) { return $a->order - $b->order; });
 
 # header for the table
-if ( count($config->data) > 0 )
+if ( count((array)$config->data) > 0 )
   {
   echo '<table>
     <tr>
