@@ -27,7 +27,7 @@ if ( isset($_POST) )
     $config = json_decode($config_file_raw);
     if (empty($config)) die("failed to parse JSON config");
 
-    $password_hashed = password_hash($pass, PASSWORD_DEFAULT);
+    $password_hashed = hash('sha256', $pass);
 
     if ( !isset($config->users->$username) )
         {
