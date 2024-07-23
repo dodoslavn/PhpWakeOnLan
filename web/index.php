@@ -30,6 +30,10 @@ if (empty($config)) die("failed to parse JSON config");
 # check if logged in
 if (empty($_SESSION['id'])) header('Location: login/');
 
+# order the json based on order value
+$config_ordered = (array)$config->data;
+usort($config_ordered, function($a, $b) { return $a->order - $b->order; });
+
 echo '<table>
   <tr>
     <th>TITLE</th>
@@ -37,8 +41,9 @@ echo '<table>
     <th>Wake On Lan</th>
   </tr>
 ';
+
 //$data = $config['data'];
-foreach ( $config->data as $host => $info )
+foreach ( $config_ordered->data as $host => $info )
   { echo '<tr><td>'.$info->title."</td><td>".$host.'<td><a target="_new" href="api.php?title='.$info->title.'">EXECUTE</a></td></tr>'; }
 echo '</table>';
  
