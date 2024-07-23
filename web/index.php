@@ -37,9 +37,9 @@ echo '<table>
     <th>Wake On Lan</th>
   </tr>
 ';
-$data = $config['data'];
-foreach ( $data as $host => $info )
-  { echo '<tr><td>'.$info['title']."</td><td>".$host.'<td><a target="_new" href="api.php?title='.$info['title'].'">EXECUTE</a></td></tr>'; }
+//$data = $config['data'];
+foreach ( $config->data as $host => $info )
+  { echo '<tr><td>'.$info->title."</td><td>".$host.'<td><a target="_new" href="api.php?title='.$info->title.'">EXECUTE</a></td></tr>'; }
 echo '</table>';
  
 ?>
