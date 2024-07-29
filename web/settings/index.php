@@ -38,7 +38,7 @@ if (empty($_SESSION['id'])) header('Location: login/');
       <table>
       <tr><td>Account name:</td><td> <? echo  $_SESSION['id']; ?> </td></tr>
       <tr><td>Change password:</td><td> <form action="#" method="post">
-                         <input type="input" name="pw_reset value=""> 
+                         <input type="password" name="pw_reset value=""> 
                          <input type="submit" value="Save">
                        </form></td></tr>
       </table>
