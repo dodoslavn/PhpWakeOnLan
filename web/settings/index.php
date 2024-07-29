@@ -31,11 +31,13 @@ if (empty($_SESSION['id'])) header('Location: login/');
     </div>
     <div id="content">
       <h4>Your account</h4>
-      Account name: <? echo  $_SESSION['id']; ?> <br>
-      Change password: <form action="#" method="post">
+      <table>
+      <tr><td>Account name:</td><td> <? echo  $_SESSION['id']; ?> </td></tr>
+      <tr><td>Change password:</td><td> <form action="#" method="post">
                          <input type="input" name="pw_reset value=""> 
                          <input type="submit" value="Save">
-                       </form>
+                       </form></td></tr>
+      </table>table
       <h4>Website settings</h4>
       Enable PHP debug: <form target="#" method="post"><input type="checkbox" name="php_debug" value="<? echo $_SESSION['debug']; ?>"></form>
       Language: 
@@ -44,8 +46,6 @@ if (empty($_SESSION['id'])) header('Location: login/');
             <option value="en">English</option>
           </select>
         </form>
-
-<? echo  $_SESSION['id']; ?> <br>
       Add account: contact admin to add account manually <br>
     </div>
   </body>
