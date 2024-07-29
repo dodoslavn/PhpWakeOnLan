@@ -47,7 +47,7 @@ if (empty($_SESSION['id'])) header('Location: login/');
             <option value="en">English</option>
           </select>
         </form></td></tr>
-      <tr><td>Add account:</td><td> contact admin to add account manually </td></tr>
+      <tr><td>Add account:</td><td> contact admin to add account manually</td></tr>
       </table>
 
 <?
@@ -77,7 +77,7 @@ if ( count((array)$config->data) > 0 )
     { echo $item; }
   # show rest
   echo $rest;
-  echo '<tr>name<td></td>mac<td><td></td><td>Add</td></tr>';
+  echo '<tr><td>name</td><td>mac<td></td><td>Add</td></tr>';
   echo '</table>';
   }
 else
