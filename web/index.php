@@ -7,8 +7,9 @@
   <div id="header">
     <div id="title">PhpWakeOnLan</div>
     <div id="links">
-      <a href="/settings/">SETTINGS</a>
-      <a href="/logout.php">LOGOUT</a>
+      <a href="/arp/">ARP table</a>
+      <a href="/settings/">Settings</a>
+      <a href="/logout.php">Logout</a>
     </div>
   </div>
 <div id="content">
