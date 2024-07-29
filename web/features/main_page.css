@@ -10,7 +10,10 @@ html body div#header
   }
 
 html body div#header div#title
-  { float: left; }
+  { 
+  float: left;
+  margin-left: 3rem;
+  }
 html body div#header div#links
   { float: right; }
 
