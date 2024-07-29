@@ -49,7 +49,7 @@ if (empty($_SESSION['id'])) header('Location: login/');
         </form></td></tr>
       <tr><td>Add account:</td><td> contact admin to add account manually</td></tr>
       </table>
-
+      <h4>Saved hosts for WoL</h4>
 <?
 # header for the table
 if ( count((array)$config->data) > 0 )
