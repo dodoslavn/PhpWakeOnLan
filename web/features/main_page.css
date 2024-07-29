@@ -20,6 +20,9 @@ html body div#header a
   margin: 0 0.5rem 0 0.5rem;
   }
 
+html body div#header a:hover
+  { color: #403866; }
+
 a
   { text-decoration: none; }
 
@@ -40,4 +43,6 @@ html body div#content
 html body div#content table tr td
   { text-align: center; }
 
+html body div#content table tr td a
+  { color: #32a852; }
 
