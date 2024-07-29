@@ -69,5 +69,6 @@ else
  
 ?>
    </div>
+   <div id="footer">copyleft</div>
   </body>
 </html>
