@@ -83,7 +83,7 @@ if ( isset($_POST) )
             $save_json_file = json_encode($config);
             file_put_contents('../../config.json', $save_json_file);
             }
-        $_SESSION["id"] = $config->users->$username->id;
+        $_SESSION["id"] = $config->users->$username;
         header('Location: ..');
         }
     else
