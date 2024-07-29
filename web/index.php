@@ -5,6 +5,7 @@
   </head>
   <body>
   <div id="header">
+    PhpWakeOnLan
     <a href="/settings/">SETTINGS</a>
     <a href="/logout.php">LOGOUT</a>
   </div>
