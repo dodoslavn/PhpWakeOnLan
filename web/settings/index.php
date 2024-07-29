@@ -30,7 +30,12 @@ if (empty($_SESSION['id'])) header('Location: login/');
       <a href="./logout.php">LOGOUT</a>
     </div>
     <div id="content">
-Your account: <? echo  $_SESSION['id']; ?>
+      <h4>Your account</h4>
+      Account name: <? echo  $_SESSION['id']; ?> <br>
+      Change password: <? echo  $_SESSION['id']; ?> <br>
+      <h4>Website settings</h4>
+      PHP debug: <? echo  $_SESSION['debug']; ?> <br>
+      Language: <? echo  $_SESSION['id']; ?> <br>
     </div>
   </body>
 </html>
