@@ -56,13 +56,13 @@ html body div#content table
 html body div#content table tr th
   { border-bottom: 0.15rem black solid; }
 
-html body div#content table tr td
+html body div#content table#wol tr td
   { text-align: center; }
 
-html body div#content table tr td a
+html body div#content table#wol tr td a
   { color: #32a852; }
 
-html body div#content table tr td a:hover
+html body div#content table#wol tr td a:hover
   { color: #403866; }
 
 form
