@@ -40,6 +40,9 @@ html body div#content
   width: 30rem;
   }
 
+html body div#content table
+  { width: 75%; }
+
 html body div#content table tr td
   { text-align: center; }
 
