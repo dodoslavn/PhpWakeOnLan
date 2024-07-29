@@ -69,6 +69,6 @@ else
  
 ?>
    </div>
-   <div id="footer">copyleft</div>
+   <div id="footer"> <a href="https://github.com/dodoslavn/PhpWakeOnLan/">Github</a> </div>
   </body>
 </html>
