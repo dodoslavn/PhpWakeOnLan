@@ -1,15 +1,21 @@
 <?
 session_start();
 
-$config_file_raw = file_get_contents('../../config.json');
-$config = json_decode($config_file_raw);
+# debug output switch
+$debug = true;
+if ($debug)
+  {
+  error_reporting(E_ALL);
+  ini_set('display_errors', 'On');
+  }
+
+# load config file
+$config_file_raw = file_get_contents('../config.json'); 
+$config = json_decode($config_file_raw); 
 if (empty($config)) die("failed to parse JSON config");
 
-# set default, many ways to authenticate
-$auth = false;
-
-# authenticate via logging in, user+pass 
-if (isset($_SESSION['id'])) $auth = true; 
+# check if logged in
+if (empty($_SESSION['id'])) header('Location: login/');
 
 
 ?>
