@@ -9,6 +9,11 @@ html body div#header
   border-radius: 0.7rem;
   }
 
+html body div#header div#title
+  { float: left; }
+html body div#header div#links
+  { float: right; }
+
 html body div#header a
   { 
   text-align: right;
