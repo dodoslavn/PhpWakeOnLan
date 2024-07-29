@@ -12,7 +12,7 @@ html body div#header
 html body div#header div#title
   { 
   float: left;
-  margin-left: 3rem;
+  margin-left: 1rem;
   }
 html body div#header div#links
   { float: right; }
