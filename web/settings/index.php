@@ -32,7 +32,7 @@ if (empty($_SESSION['id'])) header('Location: login/');
     <div id="content">
       <h4>Your account</h4>
       Account name: <? echo  $_SESSION['id']; ?> <br>
-      Change password: <form target="#" method="post">
+      Change password: <form action="#" method="post">
                          <input type="input" name="pw_reset value=""> 
                          <input type="submit" value="Save">
       <h4>Website settings</h4>
