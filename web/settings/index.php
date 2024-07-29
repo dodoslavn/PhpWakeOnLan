@@ -49,6 +49,39 @@ if (empty($_SESSION['id'])) header('Location: login/');
         </form></td></tr>
       <tr><td>Add account:</td><td> contact admin to add account manually </td></tr>
       </table>
+
+<?
+# header for the table
+if ( count((array)$config->data) > 0 )
+  {
+  echo '<table>
+    <tr>
+      <th>TITLE</th>
+      <th>MAC</th>
+      <th>Wake On Lan</th>
+      <th>Last used</th>
+    </tr>';
+    
+  # show the hosts
+  $rest = "";
+  # loop through data, display ordered records, then the rest
+  foreach ( $config->data as $host => $info )
+    {
+    if ( isset($info->order) )
+      { $ordered[$info->order] = '<tr><td>'.$info->title."</td><td>".$host.'<td>EXECUTE</td><td></td></tr>'; }
+    else 
+     { $rest = $rest." ".'<tr><td>'.$info->title."</td><td>".$host.'<td>EXECUTE</td><td></td></tr>'; }
+     }
+  # show ordered
+  foreach($ordered as $item)
+    { echo $item; }
+  # show rest
+  echo $rest;
+  echo '</table>';
+  }
+else
+  { echo "List of hosts is empty."; }
+?>
     </div>
   </body>
 </html>
