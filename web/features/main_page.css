@@ -43,6 +43,9 @@ html body div#content
 html body div#content table
   { width: 90%; }
 
+html body div#content table tr th
+  { border-bottom: 0.5rem black solid; }
+
 html body div#content table tr td
   { text-align: center; }
 
