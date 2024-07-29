@@ -42,15 +42,16 @@ if ( count((array)$config->data) > 0 )
       <th>TITLE</th>
       <th>MAC</th>
       <th>Wake On Lan</th>
+      <th>Last used</th>
     </tr>';
   # show the hosts
   $rest = "";
   foreach ( $config->data as $host => $info )
     {
     if ( isset($info->order) )
-      { $ordered[$info->order] = '<tr><td>'.$info->title."</td><td>".$host.'<td><a target="_new" href="api.php?title='.$info->title.'">EXECUTE</a></td></tr>'; }
+      { $ordered[$info->order] = '<tr><td>'.$info->title."</td><td>".$host.'<td><a target="_new" href="api.php?title='.$info->title.'">EXECUTE</a></td><td></td></tr>'; }
     else 
-     { $rest = $rest." ".'<tr><td>'.$info->title."</td><td>".$host.'<td><a target="_new" href="api.php?title='.$info->title.'">EXECUTE</a></td></tr>'; }
+     { $rest = $rest." ".'<tr><td>'.$info->title."</td><td>".$host.'<td><a target="_new" href="api.php?title='.$info->title.'">EXECUTE</a></td><td></td></tr>'; }
      }
   foreach($ordered as $item)
     { echo $item; }
