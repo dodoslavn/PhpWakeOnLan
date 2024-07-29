@@ -64,3 +64,6 @@ html body div#content table tr td a
 
 html body div#content table tr td a:hover
   { color: #403866; }
+
+form
+  { margin: 0; }
