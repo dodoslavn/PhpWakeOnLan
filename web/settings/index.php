@@ -22,7 +22,7 @@ if (empty($_SESSION['id'])) header('Location: login/');
 <html>
   <head>
     <title>PhpWakeOnLan - settings</title>
-    <link rel="stylesheet" type="text/css" href="../features/main_page.css">
+    <link rel="stylesheet" type="text/css" href="/features/main_page.css">
   </head>
   <body>
     <div id="header">
