@@ -3,7 +3,7 @@ html body div#header
   width: 50rem;
   height: 1.5rem;
   background-color: #32a852;
-  text-align: right;
+  text-align: left;
   padding-top: 0.5rem;
   margin: 0 auto 0 auto;
   border-radius: 0.7rem;
@@ -11,6 +11,7 @@ html body div#header
 
 html body div#header a
   { 
+  text-align: right;
   text-decoration: none; 
   /*color: rgb(64, 56, 102); 
   color: #827ffe;*/
