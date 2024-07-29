@@ -6,6 +6,7 @@ html body div#header
   text-align: right;
   padding-top: 0.5rem;
   margin: 0 auto 0 auto;
+  border-radius: 0.7rem;
   }
 
 html body div#header a
