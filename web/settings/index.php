@@ -37,16 +37,18 @@ if (empty($_SESSION['id'])) header('Location: login/');
                          <input type="input" name="pw_reset value=""> 
                          <input type="submit" value="Save">
                        </form></td></tr>
-      </table>table
+      </table>
       <h4>Website settings</h4>
-      Enable PHP debug: <form target="#" method="post"><input type="checkbox" name="php_debug" value="<? echo $_SESSION['debug']; ?>"></form>
-      Language: 
+      <table>
+      <tr><td>Enable PHP debug:</td><td> <form target="#" method="post"><input type="checkbox" name="php_debug" value="<? echo $_SESSION['debug']; ?>"></form></td></tr>
+      <tr><td>Language: </td><td>
         <form action="#" method="post">
           <select name="lang">     
             <option value="en">English</option>
           </select>
-        </form>
-      Add account: contact admin to add account manually <br>
+        </form></td></tr>
+      <tr><td>Add account:</td><td> contact admin to add account manually </td></tr>
+      </table>
     </div>
   </body>
 </html>
