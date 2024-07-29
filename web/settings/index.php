@@ -35,6 +35,7 @@ if (empty($_SESSION['id'])) header('Location: login/');
       Change password: <form action="#" method="post">
                          <input type="input" name="pw_reset value=""> 
                          <input type="submit" value="Save">
+                       </form>
       <h4>Website settings</h4>
       Enable PHP debug: <form target="#" method="post"><input type="checkbox" name="php_debug" value="<? echo $_SESSION['debug']; ?>"></form>
       Language: <? echo  $_SESSION['id']; ?> <br>
