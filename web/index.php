@@ -5,7 +5,7 @@
   </head>
   <body>
   <div id="header">
-    <a href="#">SETTINGS</a>
+    <a href="./settings/">SETTINGS</a>
     <a href="./logout.php">LOGOUT</a>
   </div>
 <div id="content">
