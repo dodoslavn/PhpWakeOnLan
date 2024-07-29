@@ -58,7 +58,7 @@ if (empty($_SESSION['id'])) header('Location: login/');
 # header for the table
 if ( count((array)$config->data) > 0 )
   {
-  echo '<table>
+  echo '<table id="wol">
     <tr>
       <th>TITLE</th>
       <th>MAC</th>
