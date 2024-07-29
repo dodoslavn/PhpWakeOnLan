@@ -39,8 +39,10 @@ if ( isset($_POST) )
     if (empty($config)) die("failed to parse JSON config");
 
     # disable debug mode by default
-    if (!isset($_SESSION['lang'])) && (isset($config->data->lang)) { $_SESSION['lang'] = $config->data->lang; }
-    else { $_SESSION['lang'] = 'en'; }
+    if ( !isset($_SESSION['lang'])  &&  isset($config->data->lang) ) 
+      { $_SESSION['lang'] = $config->data->lang; }
+    else 
+      { $_SESSION['lang'] = 'en'; }
       
     # hash password 
     $password_hashed = hash('sha256', $pass);
