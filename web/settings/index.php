@@ -32,9 +32,12 @@ if (empty($_SESSION['id'])) header('Location: login/');
     <div id="content">
       <h4>Your account</h4>
       Account name: <? echo  $_SESSION['id']; ?> <br>
-      Change password: <? echo  $_SESSION['id']; ?> <br>
+      Change password: <form target="#" method="post">
+                         <input type="input" name="pw_reset value=""> 
+                         <input type="submit" value="Save>">
+                         <br>
       <h4>Website settings</h4>
-      PHP debug <form target="#" method="post"><input type="checkbox" value="<? echo $_SESSION['debug']; ?>">  </form><br>
+      PHP debug <form target="#" method="post"><input type="checkbox" name="php_debug" value="<? echo $_SESSION['debug']; ?>">  </form><br>
       Language: <? echo  $_SESSION['id']; ?> <br>
       Add account: contact admin to add account manually <br>
     </div>
