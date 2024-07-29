@@ -34,8 +34,9 @@ if (empty($_SESSION['id'])) header('Location: login/');
       Account name: <? echo  $_SESSION['id']; ?> <br>
       Change password: <? echo  $_SESSION['id']; ?> <br>
       <h4>Website settings</h4>
-      PHP debug: <? echo  $_SESSION['debug']; ?> <br>
+      PHP debug:  <input type="checkbox" value="<? echo $_SESSION['debug']; ?>">  <br>
       Language: <? echo  $_SESSION['id']; ?> <br>
+      Add account: contact admin to add account manually <br>
     </div>
   </body>
 </html>
