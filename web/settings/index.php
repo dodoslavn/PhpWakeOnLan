@@ -38,7 +38,14 @@ if (empty($_SESSION['id'])) header('Location: login/');
                        </form>
       <h4>Website settings</h4>
       Enable PHP debug: <form target="#" method="post"><input type="checkbox" name="php_debug" value="<? echo $_SESSION['debug']; ?>"></form>
-      Language: <? echo  $_SESSION['id']; ?> <br>
+      Language: 
+        <form action="#" method="post">
+          <select name="lang">     
+            <option value="en">English</option>
+          </select>
+        </form>
+
+<? echo  $_SESSION['id']; ?> <br>
       Add account: contact admin to add account manually <br>
     </div>
   </body>
