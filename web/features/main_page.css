@@ -67,3 +67,6 @@ html body div#content table#wol tr td a:hover
 
 form
   { margin: 0; }
+
+html body div#content h4
+  { color: #32a852; }
