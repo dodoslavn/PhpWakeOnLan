@@ -26,6 +26,7 @@ if (empty($_SESSION['id'])) header('Location: login/');
   </head>
   <body>
     <div id="header">
+      <a href="/arp/">ARP</a>
       <a href="/settings/">SETTINGS</a>
       <a href="/logout.php">LOGOUT</a>
     </div>
