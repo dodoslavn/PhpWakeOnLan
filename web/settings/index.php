@@ -10,7 +10,7 @@ if ($debug)
   }
 
 # load config file
-$config_file_raw = file_get_contents('../config.json'); 
+$config_file_raw = file_get_contents('../../config.json'); 
 $config = json_decode($config_file_raw); 
 if (empty($config)) die("failed to parse JSON config");
 
