@@ -5,9 +5,11 @@
   </head>
   <body>
   <div id="header">
-    PhpWakeOnLan
-    <a href="/settings/">SETTINGS</a>
-    <a href="/logout.php">LOGOUT</a>
+    <div id="title">PhpWakeOnLan</div>
+    <div id="links">
+      <a href="/settings/">SETTINGS</a>
+      <a href="/logout.php">LOGOUT</a>
+    </div>
   </div>
 <div id="content">
   
