@@ -5,7 +5,7 @@
   </head>
   <body>
   <div id="header">
-    <span style="text-align='left';">PhpWakeOnLan</span>
+    PhpWakeOnLan
     <a href="/settings/">SETTINGS</a>
     <a href="/logout.php">LOGOUT</a>
   </div>
