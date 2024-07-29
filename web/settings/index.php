@@ -44,7 +44,7 @@ if (empty($_SESSION['id'])) header('Location: login/');
       </table>
       <h4>Website settings</h4>
       <table>
-      <tr><td>Enable PHP debug:</td><td> <form target="#" method="post"><input type="checkbox" name="php_debug" value="<? echo $_SESSION['debug']; ?>"></form> (only for this session)</td></tr>
+      <tr><td>Enable PHP debug:</td><td> <form target="#" method="post"><input type="checkbox" id="debug" name="php_debug" value="<? echo $_SESSION['debug']; ?>"><label for="debug"> (only for this session)</label></form> </td></tr>
       <tr><td>Language: </td><td>
         <form action="#" method="post">
           <select name="lang">     
