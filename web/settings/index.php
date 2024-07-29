@@ -26,8 +26,8 @@ if (empty($_SESSION['id'])) header('Location: login/');
   </head>
   <body>
     <div id="header">
-      <a href="#">SETTINGS</a>
-      <a href="./logout.php">LOGOUT</a>
+      <a href="/settings/">SETTINGS</a>
+      <a href="/logout.php">LOGOUT</a>
     </div>
     <div id="content">
       <h4>Your account</h4>
