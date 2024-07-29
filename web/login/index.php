@@ -7,9 +7,11 @@ if (isset($_SESSION['id'])) header('Location: ..');
 # wrong logins
 if (!isset($_SESSION['login_attempt'])) $_SESSION['login_attempt'] = 0;
 
+# disable debug mode by default
+if (!isset($_SESSION['debug'])) $_SESSION['debug'] = false;
+
 # debug output
-$debug = true;
-if ($debug)
+if ($_SESSION['debug'])
   {
   error_reporting(E_ALL);
   ini_set('display_errors', 'On');
