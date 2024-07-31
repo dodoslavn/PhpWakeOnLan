@@ -2,7 +2,7 @@
 A simple web interface for executing Wake On Lan (WoL) commands to start machines on the same network where the web server is running.
 
 ## Requirements
-PHP
+PHP  
 WoL binary installed
 
 ## Description
