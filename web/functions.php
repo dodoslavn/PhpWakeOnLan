@@ -2,7 +2,6 @@
 
 # start session
 session_start();
-$config;
 
 # if debug is on, show errors and warnings
 function debug()
@@ -15,6 +14,7 @@ function debug()
   }
 
 # load config file
+global $config;
 function load_json_config()
 	{
 	$config_file_raw = file_get_contents('../config.json'); 
