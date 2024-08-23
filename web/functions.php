@@ -2,6 +2,7 @@
 
 # start session
 session_start();
+$config;
 
 # if debug is on, show errors and warnings
 function debug()
