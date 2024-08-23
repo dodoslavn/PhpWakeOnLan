@@ -16,6 +16,9 @@
   
 <?php
 require '../functions.php';
+check_logged_in();
+debug();
+load_json_config();
 
 
 
