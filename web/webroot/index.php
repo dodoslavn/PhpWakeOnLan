@@ -1,6 +1,9 @@
 <?php
 require '../header.php';
 require '../functions.php';
+
+global $config;
+
 check_logged_in();
 debug();
 load_json_config();
