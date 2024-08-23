@@ -36,7 +36,7 @@ function load_json_config()
 
 # check if logged in
 function check_logged_in()
-	{ if (empty($_SESSION['id'])) header('Location: login/'); }
+	{ if (empty($_SESSION['id'])) header('Location: /login/'); }
 
 
 
