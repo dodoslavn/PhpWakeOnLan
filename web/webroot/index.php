@@ -2,11 +2,9 @@
 require '../header.php';
 require '../functions.php';
 
-global $config;
-
 check_logged_in();
 debug();
-load_json_config();
+$config = load_json_config();
 
 # header for the table
 if ( count((array)$config->data) > 0 )
