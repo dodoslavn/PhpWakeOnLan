@@ -1,6 +1,6 @@
 <?
-require '../header.php';
-require '../functions.php';
+require '../../header.php';
+require '../../functions.php';
 
 check_logged_in();
 debug();
