@@ -1,21 +1,13 @@
 <?php
-session_start();
+require '../functions.php';
 
-# check if user is logged in already
-if (isset($_SESSION['id'])) header('Location: ..');
+check_logged_in();
+debug();
+$config = load_json_config();
+
 
 # wrong logins
 if (!isset($_SESSION['login_attempt'])) $_SESSION['login_attempt'] = 0;
-
-# disable debug mode by default
-if (!isset($_SESSION['debug'])) $_SESSION['debug'] = false;
-
-# debug output
-if ($_SESSION['debug'])
-  {
-  error_reporting(E_ALL);
-  ini_set('display_errors', 'On');
-  }
 
 # show last used username in the form prefilled
 if ( !isset($_SESSION["form_user"]) )
@@ -32,17 +24,6 @@ if ( isset($_POST) )
     {
     # set the prefilled username
     $_SESSION["form_user"] = ' value="'.$username.'" ';
-
-    # load JSON config file
-    $config_file_raw = file_get_contents('../../config.json');
-    $config = json_decode($config_file_raw);
-    if (empty($config)) die("failed to parse JSON config");
-
-    # disable debug mode by default
-    if ( !isset($_SESSION['lang']) & isset($config->data->lang) ) 
-      { $_SESSION['lang'] = $config->data->lang; }
-    else 
-      { $_SESSION['lang'] = 'en'; }
       
     # hash password 
     $password_hashed = hash('sha256', $pass);

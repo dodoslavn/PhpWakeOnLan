@@ -37,6 +37,5 @@ if ( count((array)$config->data) > 0 )
 else
   { echo "List of hosts is empty."; }
 
-
 require '../footer.php';
 ?>
