@@ -15,18 +15,8 @@
 <div id="content">
   
 <?php
-require '../functions.php'
+require '../functions.php';
 
-if ($debug)
-  {
-  error_reporting(E_ALL);
-  ini_set('display_errors', 'On');
-  }
-
-# load config file
-$config_file_raw = file_get_contents('../config.json'); 
-$config = json_decode($config_file_raw); 
-if (empty($config)) die("failed to parse JSON config");
 
 
 # header for the table
