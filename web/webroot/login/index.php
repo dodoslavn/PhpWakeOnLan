@@ -3,7 +3,7 @@ require '../functions.php';
 
 check_logged_in();
 debug();
-$config = load_json_config();
+$config = load_json_config('../');
 
 
 # wrong logins
