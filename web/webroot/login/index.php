@@ -2,7 +2,7 @@
 require '../../functions.php';
 
 debug();
-$config = load_json_config();
+$config = load_json_config('../');
 
 
 # wrong logins
