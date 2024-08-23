@@ -25,7 +25,7 @@ function perform_config_health_check()
 	}
 
 # load config file
-function load_json_config($rel_path)
+function load_json_config($rel_path="")
 	{
 	$config_file_raw = file_get_contents($rel_path.'../config.json'); 
 	$config = json_decode($config_file_raw); 
