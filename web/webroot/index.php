@@ -1,13 +1,9 @@
-
-  
 <?php
 require '../header.php';
 require '../functions.php';
 check_logged_in();
 debug();
 load_json_config();
-
-
 
 # header for the table
 if ( count((array)$config->data) > 0 )
@@ -41,9 +37,5 @@ else
   { echo "List of hosts is empty."; }
 
 
- 
+require '../footer.php';
 ?>
-   </div>
-   <div id="footer"> PhpWakeOnLan : Dodoslav Novak : <a style="color: rgb(50, 168, 82);" href="https://github.com/dodoslavn/PhpWakeOnLan/">Github</a> </div>
-  </body>
-</html>
