@@ -16,7 +16,7 @@ function string_check($str)
 
 function change_wol_binary($path)
 	{
-	if !( isset($path) ) return new Result('ERROR: No path was set!', false );
+	if ( !isset($path) ) return new Result('ERROR: No path was set!', false );
 	if (string_check($path)) return new Result('ERROR: Invalid path!', false );
 	
 	exec('/bin/ls '.$path, $output, $returnCode);
