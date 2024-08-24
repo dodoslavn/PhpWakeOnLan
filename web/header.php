@@ -4,8 +4,10 @@
     <link rel="stylesheet" type="text/css" href="/features/main_page.css">
     <script>
         function autoSubmitForm(checkbox) 
+            {
             var form = checkbox.closest('form');
             if (form) { form.submit(); }
+            }
     </script>
   </head>
   <body>
