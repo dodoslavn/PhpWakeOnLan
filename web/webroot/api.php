@@ -20,12 +20,15 @@ if ( isset($_GET['title']) && isset($_GET['mac']) ) die("ERROR: Both arguments a
 # get MAC from saved list, via title
 if ( isset($_GET['title']) )
   {
-  foreach ($config->data as $host)
+  foreach ($config->data as $mac_itself => $mac_data)
     {
-    if (isset($host->title))
+    if (isset($mac_data->title))
       { 
-      if ( $host->title == $_GET['title'] )
-        { $mac = $host; }
+      if ( $mac_data->title == $_GET['title'] )
+        { 
+        $mac_itself = $host; 
+        break;
+        }
       }
     }
   }
