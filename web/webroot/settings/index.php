@@ -5,7 +5,7 @@ require '../../functions_settings.php';
 
 check_logged_in();
 debug();
-$config = load_json_config('../');
+global $config = load_json_config('../');
 
 $result;
 if ($_SERVER['REQUEST_METHOD'] == 'POST')
