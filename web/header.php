@@ -9,7 +9,7 @@
     <div id="links">
       <a href="/arp/">ARP</a>
       <a href="/settings/">SETTINGS</a>
-      <a href="/logout.php">LOGOUT</a>
+      <a href="/logout/">LOGOUT</a>
     </div>
   </div>
 <div id="content">
