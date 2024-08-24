@@ -6,14 +6,7 @@ check_logged_in();
 debug();
 $config = load_json_config('../');
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST')
-    {
-    switch ($_POST[]) {
-        case 0:
-            echo "i equals 0";
 
-
-    }
 
 
 ?>
