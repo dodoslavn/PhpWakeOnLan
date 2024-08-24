@@ -8,21 +8,6 @@ $config = load_json_config('../');
 
 
 ?>
-<html>
-  <head>
-    <title>PhpWakeOnLan - settings</title>
-    <link rel="stylesheet" type="text/css" href="/features/main_page.css">
-  </head>
-  <body>
-  <div id="header">
-    <div id="title">PhpWakeOnLan</div>
-    <div id="links">
-      <a href="/arp/">ARP</a>
-      <a href="/settings/">SETTINGS</a>
-      <a href="/logout.php">LOGOUT</a>
-    </div>
-  </div>
-    <div id="content">
       <h4>Your account</h4>
       <table>
       <tr><td>Account name:</td><td> <? echo  $_SESSION['id']; ?> </td></tr>
