@@ -3,6 +3,7 @@
 # start session
 session_start();
 
+global $lang;
 require './lang/'.$_SESSION['lang'].'.php';
 
 
