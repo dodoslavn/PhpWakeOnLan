@@ -58,7 +58,7 @@ print_r($output[0]);
 echo $retval;
 
 date_default_timezone_set("Europe/Prague");
-$config->data->$mac->last_used = date("H:i d.m.Y");;
+$config->data->$mac->last_used = date("H:i:s d.m.Y");;
 save_json_config($config);
 
 ?>
