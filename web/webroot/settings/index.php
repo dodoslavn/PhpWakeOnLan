@@ -6,14 +6,24 @@ check_logged_in();
 debug();
 $config = load_json_config('../');
 
-
-
+if ($_SERVER['REQUEST_METHOD'] == 'POST')
+    {
+    switch ($_POST['form']) 
+        {
+        case 'pw_change':
+            echo "password changed";
+            break;
+        case 'wol_bin':
+            echo "wol binary changed";
+            break;
+        }
+    }
 
 ?>
       <h4>Your account</h4>
       <table>
       <tr><td>Account name:</td><td> <?php echo  $_SESSION['id']; ?> </td></tr>
-      <tr><td>Change password:</td><td> <form action="#" method="post">
+      <tr><td>Change password:</td><td> <form action="/settings/" method="post">
                          <input type="password" minlength="6" name="password" value=""> 
                          <button type="submit" name="form" value="pw_change">Save</button>
                        </form></td></tr>
