@@ -3,6 +3,7 @@
 # start session
 session_start();
 
+require './lang/'.$_SESSION['lang'].'.php';
 
 
 # if debug is on, show errors and warnings
@@ -38,7 +39,7 @@ function load_json_config($rel_path="")
 function check_logged_in()
 	{ if (empty($_SESSION['id'])) header('Location: /login/'); }
 
-
+# save config from current data
 function save_json_config($p_config,$p_rel_path="")
 	{
     $save_json_file = json_encode($p_config);
