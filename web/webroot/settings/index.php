@@ -13,14 +13,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     switch ($_POST['form']) 
         {
         case 'pw_change':
-            echo "password changed";
+            if ( strlen($_POST['password']) > 6 )
+                {
+                $password_hashed = hash('sha256', $_POST['password']);
+                $config->users->$_SESSION["id"]->pass = $password_hashed;
+                $config->users->$_SESSION["id"]->password_hashed = true;
+                save_json_config($config,"../");
+                $result = new Result('Password updated!', true);
+                }
+            $result = new Result('ERROR: New password too short!', false);
             break;
         case 'wol_bin':
             $result = change_wol_binary($_POST['wol_binary']);
-            if ( $result->return_code ) $config->configuration->wol_binary = $_POST['wol_binary'];
-
-            $save_json_file = json_encode($config);
-            file_put_contents('../../config.json', $save_json_file);
+            if ( $result->return_code ) 
+                {
+                $config->configuration->wol_binary = $_POST['wol_binary'];
+                save_json_config($config,"../");
+                }
             break;
         }
     }

@@ -39,5 +39,10 @@ function check_logged_in()
 	{ if (empty($_SESSION['id'])) header('Location: /login/'); }
 
 
+function save_json_config($p_config,$p_rel_path="")
+	{
+    $save_json_file = json_encode($p_config);
+    if ( !file_put_contents($p_rel_path.'../config.json', $save_json_file) ) die('ERROR: Couldnt write JSON to the config file!');
+	}
 
 ?>
