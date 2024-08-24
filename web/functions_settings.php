@@ -16,13 +16,13 @@ function string_check($str)
 
 function change_wol_binary($path)
 	{
-	if (string_check($path)) return Result('ERROR: Invalid path!', false );
+	if (string_check($path)) return new Result('ERROR: Invalid path!', false );
 	
 	exec('/bin/ls '.$path, $output, $returnCode);
-	if ( $returnCode ) return Result('ERROR: File doesnt exist on system!', false );
+	if ( $returnCode ) return new Result('ERROR: File doesnt exist on system!', false );
 
 	$config->configuration->wol_binary = $path;
-	Result('Path to WoL binary was updated!', true );
+	return new Result('Path to WoL binary was updated!', true );
 	}
 ?>
 
