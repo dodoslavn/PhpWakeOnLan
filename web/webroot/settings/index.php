@@ -7,7 +7,7 @@ check_logged_in();
 debug();
 $config = load_json_config('../');
 
-Result $result;
+$result;
 if ($_SERVER['REQUEST_METHOD'] == 'POST')
     {
     switch ($_POST['form']) 
