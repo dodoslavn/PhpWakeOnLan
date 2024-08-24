@@ -25,6 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
             break;
         case 'php_debug':
             $_SESSION['debug'] = !$_SESSION['debug'];
+            echo $_SESSION['debug'];
             break;
         }
     }
