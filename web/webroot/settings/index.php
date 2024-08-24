@@ -6,19 +6,28 @@ check_logged_in();
 debug();
 $config = load_json_config('../');
 
+if ($_SERVER['REQUEST_METHOD'] == 'POST')
+    {
+    switch ($_POST[]) {
+        case 0:
+            echo "i equals 0";
+
+
+    }
+
 
 ?>
       <h4>Your account</h4>
       <table>
       <tr><td>Account name:</td><td> <?php echo  $_SESSION['id']; ?> </td></tr>
       <tr><td>Change password:</td><td> <form action="#" method="post">
-                         <input type="password" minlength="6" name="pw_reset value=""> 
-                         <input type="submit" value="Save">
+                         <input type="password" minlength="6" name="password" value=""> 
+                         <button type="submit" name="form" value="pw_change">Save</button>
                        </form></td></tr>
       </table>
       <h4>Website settings</h4>
       <table>
-      <tr><td>WoL binary:</td><td> <form target="#" method="post"><input type="input" name="wol_binary" value="<? echo $config->configuration->wol_binary; ?>"> <input type="submit" value="Save"></form>  </td></tr>
+      <tr><td>WoL binary:</td><td> <form target="#" method="post"><input type="input" name="wol_binary" value="<? echo $config->configuration->wol_binary; ?>"> <input type="submit" value="Save" name="btn_wol_binary"></form>  </td></tr>
       <tr><td>Enable PHP debug:</td><td> <form target="#" method="post"><input type="checkbox" id="debug" name="php_debug" value="<? echo $_SESSION['debug']; ?>"><label for="debug"> (only for this session)</label></form> </td></tr>
       <tr><td>Language: </td><td>
         <form action="#" method="post">
