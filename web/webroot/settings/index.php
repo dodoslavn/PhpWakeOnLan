@@ -18,6 +18,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
         case 'wol_bin':
             $result = change_wol_binary($_POST['wol_binary']);
             if ( $result->return_code ) $config->configuration->wol_binary = $_POST['wol_binary'];
+
+            $save_json_file = json_encode($config);
+            file_put_contents('../../config.json', $save_json_file);
             break;
         }
     }
