@@ -52,12 +52,12 @@ echo '
     </head>
     <body>';
 
-echo "Running command: ".$config->configuration->wol_binary." ".$mac."<br>" ;
+echo "<center>Running command: ".$config->configuration->wol_binary." ".$mac."<br><br>" ;
 exec($config->configuration->wol_binary." ".$mac, $output, $retval);
 print_r($output[0]);
 echo $retval;
 
 ?>
-</pre>
+</center>
 <body>
 </html>
