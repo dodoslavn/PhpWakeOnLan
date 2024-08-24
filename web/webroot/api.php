@@ -57,7 +57,8 @@ exec($config->configuration->wol_binary." ".$mac, $output, $retval);
 print_r($output[0]);
 echo $retval;
 
-$config->data->$mac->last_used = 'today';
+date_default_timezone_set("Europe/Prague");
+$config->data->$mac->last_used = date("H:i d.m.Y");;
 save_json_config($config);
 
 ?>
