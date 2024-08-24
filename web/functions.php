@@ -6,6 +6,8 @@ session_start();
 global $lang;
 require 'lang/'.$_SESSION['lang'].'.php';
 
+echo $_SERVER['REQUEST_URI'];
+
 
 # if debug is on, show errors and warnings
 function debug()
