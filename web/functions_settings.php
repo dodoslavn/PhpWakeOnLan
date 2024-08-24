@@ -11,8 +11,8 @@ class Result
 		}
 	}
 
-function string_check($str) {
-    return preg_match('/[^a-zA-Z0-9.\/]/', $str) > 0;
+function string_check($str) 
+	{ return preg_match('/[^a-zA-Z0-9.\/]/', $str) > 0; }
 
 function change_wol_binary($path)
 	{
