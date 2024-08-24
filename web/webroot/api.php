@@ -22,7 +22,7 @@ if ( isset($_GET['title']) )
   {
   foreach ($config->data as $host)
     {
-    if (isset($host->title) && isset($host->mac))
+    if (isset($host->title))
       { 
       if ( $host->title == $_GET['title'] )
         { $mac = $host->mac; }
