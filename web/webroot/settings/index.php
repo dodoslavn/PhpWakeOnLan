@@ -15,9 +15,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
         case 'pw_change':
             if ( strlen($_POST['password']) > 8 )
                 {
+                echo gettype($_SESSION['id']);
                 $password_hashed = hash('sha256', $_POST['password']);
-                $config->users->$_SESSION["id"]->pass = $password_hashed;
-                $config->users->$_SESSION["id"]->password_hashed = true;
+                $config->users->$_SESSION['id']->pass = $password_hashed;
+                $config->users->$_SESSION['id']->password_hashed = true;
                 save_json_config($config,"../");
                 $result = new Result('Password updated!', true);
                 }
@@ -31,7 +32,7 @@ if ( isset($result) ) echo $result->message;
 ?>
       <h4>Your account</h4>
       <table>
-      <tr><td>Account name:</td><td> <?php echo  $_SESSION['id']; ?> </td></tr>
+      <tr><td>Account name:</td><td> <?php echo $_SESSION['id']; ?> </td></tr>
       <tr><td>Change password:</td><td> <form action="/settings/" method="post">
                          <input type="password" minlength="6" name="password" value=""> 
                          <button type="submit" name="form" value="pw_change">Save</button>
