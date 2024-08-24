@@ -46,10 +46,18 @@ if ( isset($_GET['mac']) )
 # check if we got the MAC or not
 if ( !isset($mac) ) die("ERROR: Missing MAC!");
 
+echo '
+<html>
+    <head>
+    </head>
+    <body>';
 
-echo "Running command: ".$config->configuration->wol_binary." ".$mac ;
+echo "Running command: ".$config->configuration->wol_binary." ".$mac."<br>" ;
 exec($config->configuration->wol_binary." ".$mac, $output, $retval);
 print_r($output[0]);
 echo $retval;
 
 ?>
+</pre>
+<body>
+</html>
