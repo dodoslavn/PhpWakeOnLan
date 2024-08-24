@@ -21,7 +21,6 @@ function change_wol_binary($path)
 	exec('/bin/ls '.$path, $output, $returnCode);
 	if ( $returnCode ) return new Result('ERROR: File doesnt exist on system!', false );
 
-	//$config->configuration->wol_binary = $path;
 	return new Result('Path to WoL binary was updated!', true );
 	}
 ?>

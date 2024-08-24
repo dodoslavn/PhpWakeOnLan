@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
         }
     }
 
-if ( isset($result) ) echo 'aaaaa';
+if ( isset($result) ) echo $result->message;
 
 ?>
       <h4>Your account</h4>
