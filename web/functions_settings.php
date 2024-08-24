@@ -11,18 +11,6 @@ class Result
 		}
 	}
 
-function string_check($str) 
-	{ return preg_match('/[^a-zA-Z0-9.\/]/', $str) > 0; }
 
-function change_wol_binary($path)
-	{
-	if ( !strlen($path) ) return new Result('ERROR: No path was set!', false );
-	if (string_check($path)) return new Result('ERROR: Invalid path!', false );
-	
-	exec('/bin/ls '.$path, $output, $returnCode);
-	if ( $returnCode ) return new Result('ERROR: File doesnt exist on system!', false );
-
-	return new Result('Path to WoL binary was updated!', true );
-	}
 ?>
 

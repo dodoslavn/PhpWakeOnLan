@@ -68,8 +68,7 @@ if ( isset($_POST) )
             $config->users->$username->pass = $password_hashed;
             $config->users->$username->password_hashed = true;
 
-            $save_json_file = json_encode($config);
-            file_put_contents('../../config.json', $save_json_file);
+            save_json_config($config,"../");
             }
         $_SESSION["id"] = $username;
         header('Location: ..');

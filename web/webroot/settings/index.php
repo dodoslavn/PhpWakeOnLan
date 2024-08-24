@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     switch ($_POST['form']) 
         {
         case 'pw_change':
-            if ( strlen($_POST['password']) > 6 )
+            if ( strlen($_POST['password']) > 8 )
                 {
                 $password_hashed = hash('sha256', $_POST['password']);
                 $config->users->$_SESSION["id"]->pass = $password_hashed;
@@ -22,14 +22,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
                 $result = new Result('Password updated!', true);
                 }
             $result = new Result('ERROR: New password too short!', false);
-            break;
-        case 'wol_bin':
-            $result = change_wol_binary($_POST['wol_binary']);
-            if ( $result->return_code ) 
-                {
-                $config->configuration->wol_binary = $_POST['wol_binary'];
-                save_json_config($config,"../");
-                }
             break;
         }
     }
@@ -47,7 +39,7 @@ if ( isset($result) ) echo $result->message;
       </table>
       <h4>Website settings</h4>
       <table>
-      <tr><td>WoL binary:</td><td> <form target="/settings/" method="post"><input type="input" name="wol_binary" value="<? echo $config->configuration->wol_binary; ?>"> <button type="submit" name="form" value="wol_bin">Save</button></form>  </td></tr>
+      <tr><td>WoL binary:</td><td><? echo $config->configuration->wol_binary; ?>"></td></tr>
       <tr><td>Enable PHP debug:</td><td> <form target="/settings/" method="post"><input type="checkbox" id="debug" name="php_debug" value="<? echo $_SESSION['debug']; ?>"><label for="debug"> (only for this session)</label></form> </td></tr>
       <tr><td>Language: </td><td>
         <form action="#" method="post">
