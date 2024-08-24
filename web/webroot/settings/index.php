@@ -1,6 +1,7 @@
 <?
 require '../../header.php';
 require '../../functions.php';
+require '../../functions_settings.php';
 
 check_logged_in();
 debug();
@@ -30,8 +31,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
       </table>
       <h4>Website settings</h4>
       <table>
-      <tr><td>WoL binary:</td><td> <form target="#" method="post"><input type="input" name="wol_binary" value="<? echo $config->configuration->wol_binary; ?>"> <button type="submit" name="form" value="wol_bin">Save</button></form>  </td></tr>
-      <tr><td>Enable PHP debug:</td><td> <form target="#" method="post"><input type="checkbox" id="debug" name="php_debug" value="<? echo $_SESSION['debug']; ?>"><label for="debug"> (only for this session)</label></form> </td></tr>
+      <tr><td>WoL binary:</td><td> <form target="/settings/" method="post"><input type="input" name="wol_binary" value="<? echo $config->configuration->wol_binary; ?>"> <button type="submit" name="form" value="wol_bin">Save</button></form>  </td></tr>
+      <tr><td>Enable PHP debug:</td><td> <form target="/settings/" method="post"><input type="checkbox" id="debug" name="php_debug" value="<? echo $_SESSION['debug']; ?>"><label for="debug"> (only for this session)</label></form> </td></tr>
       <tr><td>Language: </td><td>
         <form action="#" method="post">
           <select name="lang">     
