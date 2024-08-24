@@ -4,7 +4,7 @@
 session_start();
 
 global $lang;
-require '../lang/'.$_SESSION['lang'].'.php';
+require 'lang/'.$_SESSION['lang'].'.php';
 
 
 # if debug is on, show errors and warnings
