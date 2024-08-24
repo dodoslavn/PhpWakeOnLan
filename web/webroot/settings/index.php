@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
             break;
         case 'wol_bin':
             $result = change_wol_binary($_POST['wol_binary']);
-            if ( $result->return_code ) $config->configuration->wol_binary = $path;
+            if ( $result->return_code ) $config->configuration->wol_binary = $_POST['wol_binary'];
             break;
         }
     }
