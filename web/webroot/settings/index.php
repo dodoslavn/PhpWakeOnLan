@@ -40,7 +40,7 @@ if ( isset($result) ) echo $result->message;
       <h4>Website settings</h4>
       <table>
       <tr><td>WoL binary:</td><td><? echo $config->configuration->wol_binary; ?></td></tr>
-      <tr><td>Enable PHP debug:</td><td> <form id="form_debug" target="/settings/" method="post"><input onclick="autoSubmitForm(this)" type="checkbox" id="debug" name="php_debug" value="<? echo $_SESSION['debug']; ?>"><label for="debug"> (only for this session)</label></form> </td></tr>
+      <tr><td>Enable PHP debug:</td><td> <form id="form_debug" target="/settings/" method="post"><input onclick="autoSubmitForm(this)" type="checkbox" id="debug" name="php_debug" value="<? echo $_SESSION['debug']; ?>"><label for="debug"> (only for this session)</label><input type="hidden" name="form" value="php_debug"></form> </td></tr>
       <tr><td>Language: </td><td>
         <form action="#" method="post">
           <select name="lang">     
