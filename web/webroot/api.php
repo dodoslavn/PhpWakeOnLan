@@ -57,7 +57,8 @@ exec($config->configuration->wol_binary." ".$mac, $output, $retval);
 print_r($output[0]);
 echo $retval;
 
-
+$config->data->$mac->last_used = 'today';
+save_json_config($config);
 
 ?>
 </center>
