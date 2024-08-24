@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
             echo "password changed";
             break;
         case 'wol_bin':
-            $result = change_wol_binary($_POST['wol_binary'];
+            $result = change_wol_binary($_POST['wol_binary']);
             if ( $result->return_code ) $config->configuration->wol_binary = $path;
             break;
         }
