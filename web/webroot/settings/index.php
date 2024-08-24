@@ -10,7 +10,7 @@ $config = load_json_config('../');
 ?>
       <h4>Your account</h4>
       <table>
-      <tr><td>Account name:</td><td> <? echo  $_SESSION['id']; ?> </td></tr>
+      <tr><td>Account name:</td><td> <?php echo  $_SESSION['id']; ?> </td></tr>
       <tr><td>Change password:</td><td> <form action="#" method="post">
                          <input type="password" minlength="6" name="pw_reset value=""> 
                          <input type="submit" value="Save">
@@ -29,7 +29,7 @@ $config = load_json_config('../');
       <tr><td>Add account:</td><td> contact admin to add account manually</td></tr>
       </table>
       <h4>Saved hosts for WoL</h4>
-<?
+<?php
 # header for the table
 if ( count((array)$config->data) > 0 )
   {
@@ -61,8 +61,5 @@ if ( count((array)$config->data) > 0 )
   }
 else
   { echo "List of hosts is empty."; }
+require '../footer.php';
 ?>
-    </div>
-    <div id="footer"> PhpWakeOnLan : Dodoslav Novak : <a style="color: rgb(50, 168, 82);" href="https://github.com/dodoslavn/PhpWakeOnLan/">Github</a> </div>
-  </body>
-</html>
