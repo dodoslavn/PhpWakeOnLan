@@ -1,16 +1,16 @@
 <?php
-session_start();
+require '../header.php';
+require '../functions.php';
 
-$config_file_raw = file_get_contents('../config.json');
-$config = json_decode($config_file_raw);
-if (empty($config)) die("failed to parse JSON config");
+debug();
+$config = load_json_config();
 
 # set default, many ways to authenticate
 $auth = false;
 
-# authenticate via logging in, user+pass 
+# check if user is authenticated
 if (isset($_SESSION['id'])) $auth = true; 
-# bearer token auth way..
+# basic auth and bearer token auth here in future
 
 if ( !$auth ) die("ERROR: Not authenticated!");
 
