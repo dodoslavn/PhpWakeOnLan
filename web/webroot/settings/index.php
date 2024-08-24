@@ -17,8 +17,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
                 {
                 print_r($config->users);
                 $password_hashed = hash('sha256', $_POST['password']);
-                $config->users->$_SESSION['id']->pass = $password_hashed;
-                $config->users->$_SESSION['id']->password_hashed = true;
+                $config->users[$_SESSION['id']]->pass = $password_hashed;
+                $config->users[$_SESSION['id']]->password_hashed = true;
                 save_json_config($config,"../");
                 $result = new Result('Password updated!', true);
                 }

@@ -28,45 +28,45 @@ if ( isset($_POST) )
     $password_hashed = hash('sha256', $pass);
 
     # if username from form doesnt exist in JSON
-    if ( !isset($config->users->$username) )
+    if ( !isset($config->users[$username]) )
         {
         #user doesnt exist in json
         header('Location: #');
         }
     # if user from form doesnt have an ID in JSON which is mednatory
-    if ( !isset($config->users->$username->id) )
+    if ( !isset($config->users[$username]->id) )
         {
         #user doesnt have ID
         header('Location: #');
         }
     # if user from form doesnt have a password in JSON which is mednatory
-    if ( !isset($config->users->$username->pass) )
+    if ( !isset($config->users[$username]->pass) )
         {
         #user doesnt have password
         header('Location: #');
         }
     # check if user has set the password is hashed
-    if ( !isset($config->users->$username->password_hashed) )
+    if ( !isset($config->users[$username]->password_hashed) )
         { $password = $pass; }
     # check if user set the password is hashed or not
-    if ( isset($config->users->$username->password_hashed) )
+    if ( isset($config->users[$username]->password_hashed) )
         {
         # use hashed or original plan password to compare with the one stored in JSON
-        if ( $config->users->$username->password_hashed == true )
+        if ( $config->users[$username]->password_hashed == true )
             { $password = $password_hashed; }
         else
             { $password = $pass; }
         }
     # check if password matchs
-    if ( $config->users->$username->pass == $password )
+    if ( $config->users[$username]->pass == $password )
         {
         #login successful
 
         # set the password to hashed form
         if ( $password_hashed != $password )
             {
-            $config->users->$username->pass = $password_hashed;
-            $config->users->$username->password_hashed = true;
+            $config->users[$username]->pass = $password_hashed;
+            $config->users[$username]->password_hashed = true;
 
             save_json_config($config,"../");
             }
