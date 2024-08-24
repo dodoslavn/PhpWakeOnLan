@@ -7,7 +7,7 @@ check_logged_in();
 debug();
 $config = load_json_config('../');
 
-
+Result $result;
 if ($_SERVER['REQUEST_METHOD'] == 'POST')
     {
     switch ($_POST['form']) 
@@ -16,12 +16,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
             echo "password changed";
             break;
         case 'wol_bin':
-            if ( change_wol_binary($_POST['wol_binary'])->return_code ) echo 'aaa';
+            if ( change_wol_binary($_POST['wol_binary'])->return_code ) $config->configuration->wol_binary = $path;
             break;
         }
     }
 
-
+if ( isset($result) ) echo 'aaaaa';
 
 ?>
       <h4>Your account</h4>
