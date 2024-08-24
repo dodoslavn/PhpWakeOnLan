@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
         case 'pw_change':
             if ( strlen($_POST['password']) > 8 )
                 {
-                echo gettype($config->users->$_SESSION['id']->pass);
+                echo $config->users;
                 $password_hashed = hash('sha256', $_POST['password']);
                 $config->users->$_SESSION['id']->pass = $password_hashed;
                 $config->users->$_SESSION['id']->password_hashed = true;
