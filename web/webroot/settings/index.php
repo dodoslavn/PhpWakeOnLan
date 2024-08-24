@@ -23,6 +23,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
                 }
             else $result = new Result('ERROR: New password too short!', false);
             break;
+        case 'php_debug':
+            $_SESSION['debug'] = !$_SESSION['debug'];
+            break;
         }
     }
 
