@@ -25,7 +25,7 @@ if ( isset($_GET['title']) )
     if (isset($host->title))
       { 
       if ( $host->title == $_GET['title'] )
-        { $mac = $host->mac; }
+        { $mac = $host; }
       }
     }
   }
