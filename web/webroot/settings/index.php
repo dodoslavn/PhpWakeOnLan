@@ -32,7 +32,7 @@ if ( isset($result) ) echo $result->message;
       <h4>Your account</h4>
       <table>
       <tr><td>Account name:</td><td> <?php echo $_SESSION['id']; ?> </td></tr>
-      <tr><td>Change password:</td><td> <form action="/settings/" method="post">
+      <tr><td>Change password:</td><td> <form id="form_pass" action="/settings/" method="post">
                          <input type="password" minlength="6" name="password" value=""> 
                          <button type="submit" name="form" value="pw_change">Save</button>
                        </form></td></tr>
@@ -40,7 +40,7 @@ if ( isset($result) ) echo $result->message;
       <h4>Website settings</h4>
       <table>
       <tr><td>WoL binary:</td><td><? echo $config->configuration->wol_binary; ?></td></tr>
-      <tr><td>Enable PHP debug:</td><td> <form target="/settings/" method="post"><input onclick="autoSubmitForm(this)" type="checkbox" id="debug" name="php_debug" value="<? echo $_SESSION['debug']; ?>"><label for="debug"> (only for this session)</label></form> </td></tr>
+      <tr><td>Enable PHP debug:</td><td> <form id="form_debug" target="/settings/" method="post"><input onclick="autoSubmitForm(this)" type="checkbox" id="debug" name="php_debug" value="<? echo $_SESSION['debug']; ?>"><label for="debug"> (only for this session)</label></form> </td></tr>
       <tr><td>Language: </td><td>
         <form action="#" method="post">
           <select name="lang">     
