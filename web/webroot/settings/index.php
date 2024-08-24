@@ -5,10 +5,9 @@ require '../../functions_settings.php';
 
 check_logged_in();
 debug();
-global $config;
 $config = load_json_config('../');
 
-$result;
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST')
     {
     switch ($_POST['form']) 
@@ -22,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
         }
     }
 
-echo $result->$message;
+
 
 ?>
       <h4>Your account</h4>
