@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     switch ($_POST['form']) 
         {
         case 'pw_change':
-            if ( strlen($_POST['password']) > 8 )
+            if ( strlen($_POST['password']) >= 6 )
                 {
                 print_r($config->users);
                 $password_hashed = hash('sha256', $_POST['password']);
@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
                 save_json_config($config,"../");
                 $result = new Result('Password updated!', true);
                 }
-            $result = new Result('ERROR: New password too short!', false);
+            else $result = new Result('ERROR: New password too short!', false);
             break;
         }
     }
