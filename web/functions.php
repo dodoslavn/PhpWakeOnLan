@@ -4,7 +4,7 @@
 session_start();
 
 global $lang;
-require 'lang/'.$_SESSION['lang'].'.php';
+#require 'lang/'.$_SESSION['lang'].'.php';
 
 echo $_SERVER['REQUEST_URI'];
 
@@ -35,6 +35,7 @@ function load_json_config($rel_path="")
 	$config = json_decode($config_file_raw); 
 	if (empty($config)) die("failed to parse JSON config");
 	perform_config_health_check();
+	require 'lang/'.$_SESSION['lang'].'.php';
 	return $config;
 	}
 
