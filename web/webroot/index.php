@@ -4,6 +4,8 @@ require '../functions.php';
 
 check_logged_in();
 debug();
+
+global $lang;
 $config = load_json_config();
 
 require '../header.php';

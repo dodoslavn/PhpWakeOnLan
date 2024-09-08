@@ -3,7 +3,6 @@
 # start session
 session_start();
 
-global $lang;
 #require 'lang/'.$_SESSION['lang'].'.php';
 
 #echo $_SERVER['REQUEST_URI'];
