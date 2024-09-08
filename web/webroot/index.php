@@ -7,6 +7,8 @@ check_logged_in();
 debug();
 $config = load_json_config();
 
+require '../header.php';
+
 # header for the table
 if ( count((array)$config->data) > 0 )
   {
