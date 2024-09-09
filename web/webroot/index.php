@@ -15,10 +15,10 @@ if ( count((array)$config->data) > 0 )
   {
   echo '<table id="wol">
     <tr>
-      <th>TITLE</th>
+      <th>'.$lang['main_table_title'].'</th>
       <th>MAC</th>
       <th>Wake On Lan</th>
-      <th>Last used</th>
+      <th>'.$lang['main_table_lastused'].'</th>
     </tr>';
     
   # show the hosts
