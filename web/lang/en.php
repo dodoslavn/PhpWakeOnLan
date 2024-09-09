@@ -1,4 +1,5 @@
 <?php
+global $lang; 
 $lang['header_settings']="SETTINGS";
 $lang['header_logout']="LOGOUT";
 
