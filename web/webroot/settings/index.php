@@ -1,5 +1,5 @@
 <?
-require '....//functions.php';
+require '../../functions.php';
 
 check_logged_in();
 debug();
