@@ -15,8 +15,8 @@
     <div id="title">PhpWakeOnLan</div>
     <div id="links">
       <a href="/arp/">ARP</a>
-      <a href="/settings/"><? echo global $lang['header_settings']; ?></a>
-      <a href="/logout/"><? echo global $lang['header_logout']; ?></a>
+      <a href="/settings/"><? global $lang; echo $lang['header_settings']; ?></a>
+      <a href="/logout/"><? global $lang; echo $lang['header_logout']; ?></a>
     </div>
   </div>
 <div id="content">
