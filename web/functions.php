@@ -3,11 +3,6 @@
 # start session
 session_start();
 
-#require 'lang/'.$_SESSION['lang'].'.php';
-
-#echo $_SERVER['REQUEST_URI'];
-
-
 # if debug is on, show errors and warnings
 function debug()
 	{
