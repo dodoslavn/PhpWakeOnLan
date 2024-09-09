@@ -1,5 +1,5 @@
 <?
-require '../functions.php';
+require '....//functions.php';
 
 check_logged_in();
 debug();
@@ -7,7 +7,7 @@ debug();
 global $lang;
 $config = load_json_config();
 
-require '../header.php';
+require '../../header.php';
 require '../../functions_settings.php';
 
 $result;
