@@ -1,13 +1,14 @@
 <?
-global $lang;
-
-require '../../functions.php';
-require '../../header.php';
-require '../../functions_settings.php';
+require '../functions.php';
 
 check_logged_in();
 debug();
-$config = load_json_config('../');
+
+global $lang;
+$config = load_json_config();
+
+require '../header.php';
+require '../../functions_settings.php';
 
 $result;
 if ($_SERVER['REQUEST_METHOD'] == 'POST')
