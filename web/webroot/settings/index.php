@@ -62,7 +62,7 @@ if ( count((array)$config->data) > 0 )
   {
   echo '<table id="wol">
     <tr>
-      <th>TITLE</th>
+      <th>'.$lang['main_table_title'].'</th>
       <th>MAC</th>
       <th></th>
       <th></th>
