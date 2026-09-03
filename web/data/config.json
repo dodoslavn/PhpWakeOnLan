@@ -1,0 +1,4 @@
+{
+    "wol_binary": "/usr/bin/wakeonlan",
+    "app_name": "Wake On LAN"
+}
